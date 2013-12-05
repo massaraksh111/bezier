@@ -3,18 +3,24 @@
 
 #include <QWidget>
 
+#include <memory>
+
+#include "complexline.h"
+
 class View : public QWidget
 {
     Q_OBJECT
+
+    std::weak_ptr<ComplexLine<BezierLine>> _bezierLine;
+
 public:
     explicit View(QWidget *parent = 0);
     
-protected:
+    void setData(ComplexBezierPtr ptr) { _bezierLine = ptr; update(); }
 
-signals:
-    
-public slots:
-    
+protected:
+    void paintEvent(QPaintEvent * event);
+
 };
 
 #endif // VIEW_H

@@ -7,10 +7,15 @@ SOURCES += \
     main.cpp \
     view.cpp \
     singleline.cpp \
-    bezierline.cpp
+    bezierline.cpp \
+    window.cpp
 
 HEADERS += \
     view.h \
     singleline.h \
     bezierline.h \
-    complexline.h
+    complexline.h \
+    window.h
+
+FORMS += \
+    window.ui
